@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-pint-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-pint-{{ version }}.tar.gz
   sha256: dbcbe5143cc8feb83e03ce8e4a517dc370f918bbb96343c677ad84cebe7dc3b7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=46.1.0
     - setuptools-scm >=5
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - django >=3.2
     - pint >=0.16
 
@@ -32,6 +32,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/CarliJoy/django-pint/
