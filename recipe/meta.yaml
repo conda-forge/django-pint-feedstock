@@ -1,13 +1,13 @@
 {% set name = "django-pint" %}
-{% set version = "0.7.3" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-pint-{{ version }}.tar.gz
-  sha256: dbcbe5143cc8feb83e03ce8e4a517dc370f918bbb96343c677ad84cebe7dc3b7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 76bf736cfef0ccf452c00c299b646c8c0206e91e7fbdfd5351995266496fc53a
 
 build:
   noarch: python
