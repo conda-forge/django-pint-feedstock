@@ -1,5 +1,5 @@
 {% set name = "django-pint" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 76bf736cfef0ccf452c00c299b646c8c0206e91e7fbdfd5351995266496fc53a
+  sha256: da1ae98910b4156cdb5bb1f9590bf1d12fd590fef1a864722d9b941265bd1a34
 
 build:
   noarch: python
